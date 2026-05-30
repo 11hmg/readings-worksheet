@@ -11,7 +11,6 @@
     --parchment: #f7f3ed;
     --warm-mid: #e8e0d4;
     --dust: #c4b8a8;
-    --terracotta: #b87058;
     --gold: #c8a84a;
     --yes-bg: #edf4ec;
     --yes-border: #a8c8a0;
@@ -25,34 +24,12 @@
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: 'Jost', sans-serif; background: var(--parchment); color: var(--ink); line-height: 1.6; }
-
-  /* ── WORKSHEET SCREEN ── */
   #worksheet-screen { display: block; }
   #results-screen { display: none; }
 
-  header {
-    background: var(--ink);
-    color: var(--parchment);
-    padding: 56px 48px 48px;
-    position: relative;
-    overflow: hidden;
-  }
-  header::before {
-    content: '';
-    position: absolute;
-    top: -80px; right: -80px;
-    width: 360px; height: 360px;
-    border-radius: 50%;
-    border: 1px solid rgba(200,168,74,0.12);
-  }
-  header::after {
-    content: '';
-    position: absolute;
-    top: -40px; right: -40px;
-    width: 220px; height: 220px;
-    border-radius: 50%;
-    border: 1px solid rgba(200,168,74,0.08);
-  }
+  header { background: var(--ink); color: var(--parchment); padding: 56px 48px 48px; position: relative; overflow: hidden; }
+  header::before { content: ''; position: absolute; top: -80px; right: -80px; width: 360px; height: 360px; border-radius: 50%; border: 1px solid rgba(200,168,74,0.12); }
+  header::after { content: ''; position: absolute; top: -40px; right: -40px; width: 220px; height: 220px; border-radius: 50%; border: 1px solid rgba(200,168,74,0.08); }
   .header-inner { max-width: 820px; margin: 0 auto; position: relative; }
   .eyebrow { font-size: 10px; letter-spacing: 5px; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
   h1 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(30px, 5vw, 50px); letter-spacing: 1px; line-height: 1.15; color: var(--parchment); margin-bottom: 20px; }
@@ -62,48 +39,12 @@
   .legend-item { display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 300; }
   .legend-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
 
-  /* Client name field */
-  .client-name-bar {
-    background: white;
-    border-bottom: 1px solid var(--warm-mid);
-    padding: 20px 48px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    flex-wrap: wrap;
-  }
+  .client-name-bar { background: white; border-bottom: 1px solid var(--warm-mid); padding: 20px 48px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
   .client-name-bar label { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--dust); white-space: nowrap; }
-  .client-name-bar input {
-    flex: 1;
-    min-width: 200px;
-    max-width: 360px;
-    font-family: 'Jost', sans-serif;
-    font-size: 14px;
-    font-weight: 300;
-    color: var(--ink);
-    background: var(--parchment);
-    border: 1px solid var(--warm-mid);
-    border-radius: 2px;
-    padding: 8px 14px;
-    outline: none;
-    transition: border-color 0.2s;
-  }
+  .client-name-bar input { flex: 1; min-width: 200px; max-width: 360px; font-family: 'Jost', sans-serif; font-size: 14px; font-weight: 300; color: var(--ink); background: var(--parchment); border: 1px solid var(--warm-mid); border-radius: 2px; padding: 8px 14px; outline: none; transition: border-color 0.2s; }
   .client-name-bar input:focus { border-color: var(--gold); }
 
-  /* Summary bar */
-  .summary-bar {
-    background: white;
-    border-bottom: 1px solid var(--warm-mid);
-    padding: 14px 48px;
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    flex-wrap: wrap;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
-  }
+  .summary-bar { background: white; border-bottom: 1px solid var(--warm-mid); padding: 14px 48px; display: flex; align-items: center; gap: 24px; flex-wrap: wrap; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
   .summary-label { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--dust); }
   .count-pill { display: flex; align-items: center; gap: 6px; padding: 4px 14px; border-radius: 20px; font-size: 13px; }
   .count-pill .num { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 500; line-height: 1; }
@@ -111,19 +52,8 @@
   .pill-maybe { background: var(--maybe-bg); color: var(--maybe-text); border: 1px solid var(--maybe-border); }
   .pill-no { background: var(--no-bg); color: var(--no-text); border: 1px solid var(--no-border); }
 
-  /* Main */
   main { max-width: 820px; margin: 0 auto; padding: 48px 48px 80px; }
-
-  .instruction-box {
-    border-left: 3px solid var(--gold);
-    padding: 20px 24px;
-    background: white;
-    margin-bottom: 48px;
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 1.9;
-    color: #4a4038;
-  }
+  .instruction-box { border-left: 3px solid var(--gold); padding: 20px 24px; background: white; margin-bottom: 48px; font-size: 14px; font-weight: 300; line-height: 1.9; color: #4a4038; }
   .instruction-box strong { font-weight: 500; color: var(--ink); }
 
   .category-block { margin-bottom: 48px; }
@@ -144,19 +74,7 @@
   .reading-row.is-no .reading-name { text-decoration: line-through; color: var(--no-text); }
 
   .btn-group { display: flex; gap: 6px; flex-shrink: 0; }
-  .vote-btn {
-    padding: 5px 14px;
-    font-family: 'Jost', sans-serif;
-    font-size: 11px;
-    font-weight: 400;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    border-radius: 2px;
-    border: 1px solid transparent;
-    cursor: pointer;
-    transition: all 0.15s;
-    white-space: nowrap;
-  }
+  .vote-btn { padding: 5px 14px; font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 400; letter-spacing: 1.5px; text-transform: uppercase; border-radius: 2px; border: 1px solid transparent; cursor: pointer; transition: all 0.15s; white-space: nowrap; }
   .btn-yes { border-color: var(--yes-border); background: transparent; color: var(--yes-text); }
   .btn-yes:hover, .btn-yes.active { background: var(--yes-text); color: white; border-color: var(--yes-text); }
   .btn-maybe { border-color: var(--maybe-border); background: transparent; color: var(--maybe-text); }
@@ -166,26 +84,10 @@
 
   .notes-area { padding: 0 20px 14px; display: none; }
   .notes-area.visible { display: block; }
-  .notes-area textarea {
-    width: 100%;
-    font-family: 'Jost', sans-serif;
-    font-size: 13px;
-    font-weight: 300;
-    color: #4a4038;
-    background: rgba(255,255,255,0.7);
-    border: 1px solid rgba(0,0,0,0.1);
-    border-radius: 2px;
-    padding: 10px 14px;
-    resize: vertical;
-    min-height: 56px;
-    outline: none;
-    line-height: 1.7;
-    transition: border-color 0.2s;
-  }
+  .notes-area textarea { width: 100%; font-family: 'Jost', sans-serif; font-size: 13px; font-weight: 300; color: #4a4038; background: rgba(255,255,255,0.7); border: 1px solid rgba(0,0,0,0.1); border-radius: 2px; padding: 10px 14px; resize: vertical; min-height: 56px; outline: none; line-height: 1.7; transition: border-color 0.2s; }
   .notes-area textarea:focus { border-color: var(--gold); }
   .notes-area textarea::placeholder { color: #b0a898; font-style: italic; }
 
-  /* Reflection */
   .reflection-section { margin-top: 56px; padding-top: 40px; border-top: 1px solid var(--warm-mid); }
   .section-eyebrow { font-size: 10px; letter-spacing: 5px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
   .section-title { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 300; color: var(--ink); margin-bottom: 8px; }
@@ -193,88 +95,26 @@
   .reflection-prompt { margin-bottom: 24px; }
   .prompt-label { font-size: 13px; font-weight: 400; color: var(--ink); margin-bottom: 8px; display: flex; align-items: flex-start; gap: 10px; }
   .prompt-label::before { content: '—'; color: var(--gold); flex-shrink: 0; margin-top: 1px; }
-  .reflection-prompt textarea {
-    width: 100%;
-    font-family: 'Jost', sans-serif;
-    font-size: 13px;
-    font-weight: 300;
-    color: #4a4038;
-    background: white;
-    border: 1px solid var(--warm-mid);
-    border-radius: 2px;
-    padding: 12px 16px;
-    resize: vertical;
-    min-height: 72px;
-    outline: none;
-    line-height: 1.8;
-    transition: border-color 0.2s;
-  }
+  .reflection-prompt textarea { width: 100%; font-family: 'Jost', sans-serif; font-size: 13px; font-weight: 300; color: #4a4038; background: white; border: 1px solid var(--warm-mid); border-radius: 2px; padding: 12px 16px; resize: vertical; min-height: 72px; outline: none; line-height: 1.8; transition: border-color 0.2s; }
   .reflection-prompt textarea:focus { border-color: var(--gold); }
   .reflection-prompt textarea::placeholder { color: #c0b8b0; font-style: italic; }
 
-  /* Submit */
   .submit-section { margin-top: 56px; padding-top: 40px; border-top: 1px solid var(--warm-mid); text-align: center; }
-  .submit-btn {
-    padding: 16px 48px;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 18px;
-    font-weight: 400;
-    letter-spacing: 2px;
-    background: var(--ink);
-    color: var(--parchment);
-    border: none;
-    border-radius: 2px;
-    cursor: pointer;
-    transition: all 0.2s;
-  }
+  .submit-btn { padding: 16px 48px; font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 400; letter-spacing: 2px; background: var(--ink); color: var(--parchment); border: none; border-radius: 2px; cursor: pointer; transition: all 0.2s; }
   .submit-btn:hover { background: #2e2820; transform: translateY(-1px); box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
   .submit-note { font-size: 12px; font-weight: 300; color: var(--dust); margin-top: 12px; letter-spacing: 1px; }
 
-  /* ── RESULTS SCREEN ── */
-  #results-screen {
-    min-height: 100vh;
-    background: var(--parchment);
-  }
-
-  .results-header {
-    background: var(--ink);
-    color: var(--parchment);
-    padding: 56px 48px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .results-header::before {
-    content: '';
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    width: 400px; height: 400px;
-    border-radius: 50%;
-    border: 1px solid rgba(200,168,74,0.1);
-  }
-  .results-header h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(28px, 5vw, 46px);
-    font-weight: 300;
-    letter-spacing: 2px;
-    margin-bottom: 12px;
-    position: relative;
-  }
+  /* RESULTS */
+  #results-screen { min-height: 100vh; background: var(--parchment); }
+  .results-header { background: var(--ink); color: var(--parchment); padding: 56px 48px; text-align: center; position: relative; overflow: hidden; }
+  .results-header::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 400px; height: 400px; border-radius: 50%; border: 1px solid rgba(200,168,74,0.1); }
+  .results-header h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px,5vw,46px); font-weight: 300; letter-spacing: 2px; margin-bottom: 12px; position: relative; }
   .results-header h2 em { color: var(--gold); font-style: italic; }
   .results-header p { font-size: 14px; font-weight: 300; color: var(--dust); position: relative; }
-
   .results-main { max-width: 820px; margin: 0 auto; padding: 48px 48px 80px; }
 
-  /* Stats row */
   .stats-row { display: flex; gap: 16px; margin-bottom: 48px; flex-wrap: wrap; }
-  .stat-card {
-    flex: 1;
-    min-width: 120px;
-    padding: 24px 20px;
-    border-radius: 4px;
-    text-align: center;
-  }
+  .stat-card { flex: 1; min-width: 120px; padding: 24px 20px; border-radius: 4px; text-align: center; }
   .stat-card.yes-card { background: var(--yes-bg); border: 1px solid var(--yes-border); }
   .stat-card.maybe-card { background: var(--maybe-bg); border: 1px solid var(--maybe-border); }
   .stat-card.no-card { background: var(--no-bg); border: 1px solid var(--no-border); }
@@ -287,16 +127,8 @@
   .stat-label.maybe-label { color: var(--maybe-text); }
   .stat-label.no-label { color: var(--no-text); }
 
-  /* Results sections */
   .results-section { margin-bottom: 48px; }
-  .results-section-header {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin-bottom: 20px;
-    padding-bottom: 12px;
-    border-bottom: 2px solid;
-  }
+  .results-section-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 2px solid; }
   .results-section-header.yes-header { border-color: var(--yes-border); }
   .results-section-header.maybe-header { border-color: var(--maybe-border); }
   .results-section-header.no-header { border-color: var(--no-border); }
@@ -305,47 +137,28 @@
   .results-section-title.maybe-title { color: var(--maybe-text); }
   .results-section-title.no-title { color: var(--no-text); }
   .results-count { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--dust); }
-
   .results-cat-group { margin-bottom: 24px; }
   .results-cat-name { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--dust); margin-bottom: 10px; }
-
-  .result-item {
-    padding: 12px 18px;
-    border-radius: 3px;
-    margin-bottom: 6px;
-  }
+  .result-item { padding: 12px 18px; border-radius: 3px; margin-bottom: 6px; }
   .result-item.yes-item { background: var(--yes-bg); border-left: 3px solid var(--yes-border); }
   .result-item.maybe-item { background: var(--maybe-bg); border-left: 3px solid var(--maybe-border); }
   .result-item.no-item { background: var(--no-bg); border-left: 3px solid var(--no-border); }
   .result-reading-name { font-size: 14px; font-weight: 400; color: var(--ink); }
   .result-note { font-size: 13px; font-weight: 300; font-style: italic; color: #6a5e52; margin-top: 6px; padding-top: 6px; border-top: 1px solid rgba(0,0,0,0.06); }
 
-  /* Reflections in results */
   .results-reflections { margin-top: 40px; padding-top: 40px; border-top: 1px solid var(--warm-mid); }
   .reflection-result { margin-bottom: 20px; }
   .reflection-q { font-size: 12px; font-weight: 500; letter-spacing: 1px; color: var(--ink); margin-bottom: 6px; }
   .reflection-a { font-size: 14px; font-weight: 300; color: #4a4038; line-height: 1.8; padding: 12px 16px; background: white; border-radius: 2px; border-left: 2px solid var(--gold); }
 
-  /* Action buttons */
   .action-row { display: flex; gap: 16px; justify-content: center; margin-top: 48px; flex-wrap: wrap; }
-  .action-btn {
-    padding: 14px 36px;
-    font-family: 'Jost', sans-serif;
-    font-size: 12px;
-    font-weight: 400;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    border-radius: 2px;
-    cursor: pointer;
-    transition: all 0.2s;
-  }
+  .action-btn { padding: 14px 36px; font-family: 'Jost', sans-serif; font-size: 12px; font-weight: 400; letter-spacing: 3px; text-transform: uppercase; border-radius: 2px; cursor: pointer; transition: all 0.2s; }
   .btn-primary { background: var(--ink); color: var(--parchment); border: 1px solid var(--ink); }
   .btn-primary:hover { background: #2e2820; }
   .btn-secondary { background: transparent; color: var(--ink); border: 1px solid var(--ink); }
   .btn-secondary:hover { background: var(--ink); color: var(--parchment); }
-
-  /* Email status */
-  .email-status { text-align: center; margin-top: 16px; font-size: 12px; font-weight: 300; color: var(--dust); min-height: 20px; }
+  .btn-email { background: transparent; color: var(--yes-text); border: 1px solid var(--yes-border); }
+  .btn-email:hover { background: var(--yes-text); color: white; }
 
   footer { text-align: center; padding: 24px; font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--dust); border-top: 1px solid var(--warm-mid); }
 
@@ -357,9 +170,8 @@
     .btn-group { width: 100%; }
     .vote-btn { flex: 1; text-align: center; }
   }
-
   @media print {
-    .summary-bar, .client-name-bar, .action-row, .email-status { display: none !important; }
+    .summary-bar, .client-name-bar, .action-row { display: none !important; }
     #worksheet-screen { display: none !important; }
     #results-screen { display: block !important; }
   }
@@ -367,11 +179,8 @@
 </head>
 <body>
 
-<!-- ══════════════════════════════════════ -->
-<!--           WORKSHEET SCREEN            -->
-<!-- ══════════════════════════════════════ -->
+<!-- WORKSHEET -->
 <div id="worksheet-screen">
-
   <header>
     <div class="header-inner">
       <div class="eyebrow">Practitioner Clarity Worksheet</div>
@@ -401,10 +210,7 @@
     <div class="instruction-box">
       <strong>How to use this worksheet:</strong> Go through each reading one at a time. Don't think — <em>feel</em>. Mark <strong>Yes</strong> for anything that makes your energy rise. <strong>Maybe</strong> for what interests you but isn't ready. <strong>Pass</strong> for what you're consciously releasing. Add notes on any Yes or Maybe to capture your vision while it's alive in you.
     </div>
-
     <div id="categories-container"></div>
-
-    <!-- Reflection -->
     <div class="reflection-section">
       <div class="section-eyebrow">After You've Gone Through Everything</div>
       <h2 class="section-title">Reflection Prompts</h2>
@@ -416,59 +222,37 @@
       <div class="reflection-prompt"><div class="prompt-label">Is there a reading you wish existed that isn't on this list?</div><textarea id="r5" placeholder="Write what comes..."></textarea></div>
       <div class="reflection-prompt"><div class="prompt-label">If you could only offer five readings for the rest of your practice, which five would they be?</div><textarea id="r6" placeholder="Write what comes..."></textarea></div>
     </div>
-
-    <!-- Submit -->
     <div class="submit-section">
       <button class="submit-btn" onclick="submitWorksheet()">See My Results ✦</button>
       <p class="submit-note">Your results will appear on the next screen</p>
     </div>
-
   </main>
   <footer>✦ &nbsp; your menu is a living document — return to it as you evolve &nbsp; ✦</footer>
 </div>
 
-<!-- ══════════════════════════════════════ -->
-<!--           RESULTS SCREEN              -->
-<!-- ══════════════════════════════════════ -->
+<!-- RESULTS -->
 <div id="results-screen">
   <div class="results-header">
     <h2 id="results-name-title">Your <em>Reading Menu</em></h2>
     <p id="results-date"></p>
   </div>
-
   <div class="results-main">
-    <!-- Stats -->
     <div class="stats-row">
-      <div class="stat-card yes-card">
-        <span class="stat-num yes-num" id="r-yes-count">0</span>
-        <span class="stat-label yes-label">Offering</span>
-      </div>
-      <div class="stat-card maybe-card">
-        <span class="stat-num maybe-num" id="r-maybe-count">0</span>
-        <span class="stat-label maybe-label">Maybe</span>
-      </div>
-      <div class="stat-card no-card">
-        <span class="stat-num no-num" id="r-no-count">0</span>
-        <span class="stat-label no-label">Passing</span>
-      </div>
+      <div class="stat-card yes-card"><span class="stat-num yes-num" id="r-yes-count">0</span><span class="stat-label yes-label">Offering</span></div>
+      <div class="stat-card maybe-card"><span class="stat-num maybe-num" id="r-maybe-count">0</span><span class="stat-label maybe-label">Maybe</span></div>
+      <div class="stat-card no-card"><span class="stat-num no-num" id="r-no-count">0</span><span class="stat-label no-label">Passing</span></div>
     </div>
-
     <div id="results-content"></div>
-
-    <!-- Action buttons -->
     <div class="action-row">
       <button class="action-btn btn-primary" onclick="window.print()">↓ Save as PDF</button>
+      <button class="action-btn btn-email" onclick="sendToSephirah()">✦ Send to Practitioner</button>
       <button class="action-btn btn-secondary" onclick="location.reload()">Start Over</button>
     </div>
-    <div class="email-status" id="email-status"></div>
   </div>
-
   <footer>✦ &nbsp; oracle starsong &nbsp; ✦</footer>
 </div>
 
 <script>
-const ADMIN_EMAIL = 'admin@oraclestarsong.com';
-
 const categories = [
   { name: "Relationships", readings: ["Looking for Love Reading","Romantic Partnership Compatibility","Soulmate & Karmic Connection Reading","Twin Flame Journey Reading","Relationship Patterns & Healing Reading","Dating & Readiness Reading","Long-Distance Relationship Reading","Commitment & Marriage Timing Reading","Breakup & Closure Reading","Post-Divorce Rebirth Reading","Family Relationship Dynamics Reading","Parent-Child Soul Contract Reading","Sibling & Extended Family Patterns","Friendship & Social Circle Reading","Boundaries & Codependency Reading"] },
   { name: "Career & Purpose", readings: ["Life Purpose & Soul Mission Reading","Career Path Clarity Reading","Right Livelihood Reading","Entrepreneurship & Business Launch Reading","Career Change Timing Reading","Workplace Dynamics & Relationships Reading","Creative Calling & Artistic Path Reading","Leadership & Authority Reading","Financial Alignment with Purpose Reading","Calling vs. Career Conflict Reading"] },
@@ -481,7 +265,7 @@ const categories = [
 
 const decisions = {};
 const notesData = {};
-const container = document.getElementById('categories-container');
+let emailBody = '';
 
 function updateTotals() {
   const vals = Object.values(decisions);
@@ -519,6 +303,7 @@ function setDecision(reading, status, rowEl, btns, notesArea) {
 }
 
 // Build worksheet
+const container = document.getElementById('categories-container');
 categories.forEach(cat => {
   const block = document.createElement('div');
   block.className = 'category-block';
@@ -546,7 +331,6 @@ categories.forEach(cat => {
   container.appendChild(block);
 });
 
-// Reflections
 const reflectionQs = [
   "Which readings did you choose fastest — without thinking?",
   "Where did you feel resistance or contraction, and what does that tell you?",
@@ -561,31 +345,23 @@ function submitWorksheet() {
   const now = new Date();
   const dateStr = now.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
 
-  // Gather data
-  const yesReadings = {};
-  const maybeReadings = {};
-  const noReadings = {};
-
+  const yesReadings = {}, maybeReadings = {}, noReadings = {};
   categories.forEach(cat => {
     cat.readings.forEach(r => {
       const status = decisions[r];
       const note = notesData[r] || '';
       if (status === 'yes') { if (!yesReadings[cat.name]) yesReadings[cat.name] = []; yesReadings[cat.name].push({ reading: r, note }); }
       else if (status === 'maybe') { if (!maybeReadings[cat.name]) maybeReadings[cat.name] = []; maybeReadings[cat.name].push({ reading: r, note }); }
-      else if (status === 'no') { if (!noReadings[cat.name]) noReadings[cat.name] = []; noReadings[cat.name].push({ reading: r, note }); }
+      else if (status === 'no') { if (!noReadings[cat.name]) noReadings[cat.name] = []; noReadings[cat.name].push({ reading: r }); }
     });
   });
 
-  const reflections = reflectionQs.map((q, i) => ({
-    q,
-    a: document.getElementById('r' + (i + 1)).value.trim()
-  }));
-
+  const reflections = reflectionQs.map((q, i) => ({ q, a: document.getElementById('r' + (i + 1)).value.trim() }));
   const yesCount = Object.values(yesReadings).flat().length;
   const maybeCount = Object.values(maybeReadings).flat().length;
   const noCount = Object.values(noReadings).flat().length;
 
-  // ── BUILD RESULTS SCREEN ──
+  // Build results screen
   document.getElementById('results-name-title').innerHTML = `${clientName}'s <em>Reading Menu</em>`;
   document.getElementById('results-date').textContent = dateStr;
   document.getElementById('r-yes-count').textContent = yesCount;
@@ -620,7 +396,6 @@ function submitWorksheet() {
   buildSection(maybeReadings, 'maybe', '◈ Revisit Later', 'maybe-title', 'maybe-header');
   buildSection(noReadings, 'no', '✕ Passing On', 'no-title', 'no-header');
 
-  // Reflections in results
   const filledReflections = reflections.filter(r => r.a);
   if (filledReflections.length > 0) {
     const refSection = document.createElement('div');
@@ -635,72 +410,46 @@ function submitWorksheet() {
     content.appendChild(refSection);
   }
 
-  // ── SEND EMAIL VIA FORMSPREE ──
-  sendEmail(clientName, dateStr, yesReadings, maybeReadings, noReadings, reflections, yesCount, maybeCount, noCount);
+  // Build email body
+  emailBody = `ASTROLOGY READINGS WORKSHEET%0D%0A`;
+  emailBody += `Client: ${encodeURIComponent(clientName)}%0D%0A`;
+  emailBody += `Date: ${encodeURIComponent(dateStr)}%0D%0A`;
+  emailBody += `Summary: ${yesCount} Offering | ${maybeCount} Maybe | ${noCount} Passing%0D%0A%0D%0A`;
+  emailBody += `YES — OFFERING (${yesCount})%0D%0A${'─'.repeat(40)}%0D%0A`;
+  Object.entries(yesReadings).forEach(([cat, items]) => {
+    emailBody += `%0D%0A${encodeURIComponent(cat)}%0D%0A`;
+    items.forEach(({ reading, note }) => {
+      emailBody += `  • ${encodeURIComponent(reading)}${note ? `%0D%0A    Note: "${encodeURIComponent(note)}"` : ''}%0D%0A`;
+    });
+  });
+  emailBody += `%0D%0AMAYBE — REVISIT (${maybeCount})%0D%0A${'─'.repeat(40)}%0D%0A`;
+  Object.entries(maybeReadings).forEach(([cat, items]) => {
+    emailBody += `%0D%0A${encodeURIComponent(cat)}%0D%0A`;
+    items.forEach(({ reading, note }) => {
+      emailBody += `  • ${encodeURIComponent(reading)}${note ? `%0D%0A    Note: "${encodeURIComponent(note)}"` : ''}%0D%0A`;
+    });
+  });
+  emailBody += `%0D%0APASSING (${noCount})%0D%0A${'─'.repeat(40)}%0D%0A`;
+  Object.entries(noReadings).forEach(([cat, items]) => {
+    emailBody += `%0D%0A${encodeURIComponent(cat)}%0D%0A`;
+    items.forEach(({ reading }) => { emailBody += `  • ${encodeURIComponent(reading)}%0D%0A`; });
+  });
+  if (filledReflections.length > 0) {
+    emailBody += `%0D%0AREFLECTIONS%0D%0A${'─'.repeat(40)}%0D%0A`;
+    filledReflections.forEach(({ q, a }) => {
+      emailBody += `%0D%0A${encodeURIComponent(q)}%0D%0A${encodeURIComponent(a)}%0D%0A`;
+    });
+  }
 
-  // Show results
   document.getElementById('worksheet-screen').style.display = 'none';
   document.getElementById('results-screen').style.display = 'block';
   window.scrollTo(0, 0);
 }
 
-function sendEmail(clientName, dateStr, yesReadings, maybeReadings, noReadings, reflections, yesCount, maybeCount, noCount) {
-  // Build plain text body for email
-  let body = `ASTROLOGY READINGS WORKSHEET\n`;
-  body += `Client: ${clientName}\n`;
-  body += `Date: ${dateStr}\n`;
-  body += `Summary: ${yesCount} Offering | ${maybeCount} Maybe | ${noCount} Passing\n\n`;
-  body += `${'═'.repeat(50)}\n✦ YES — OFFERING (${yesCount})\n${'═'.repeat(50)}\n`;
-  Object.entries(yesReadings).forEach(([cat, items]) => {
-    body += `\n${cat}\n`;
-    items.forEach(({ reading, note }) => {
-      body += `  • ${reading}${note ? `\n    Note: "${note}"` : ''}\n`;
-    });
-  });
-  body += `\n${'═'.repeat(50)}\n◈ MAYBE — REVISIT (${maybeCount})\n${'═'.repeat(50)}\n`;
-  Object.entries(maybeReadings).forEach(([cat, items]) => {
-    body += `\n${cat}\n`;
-    items.forEach(({ reading, note }) => {
-      body += `  • ${reading}${note ? `\n    Note: "${note}"` : ''}\n`;
-    });
-  });
-  body += `\n${'═'.repeat(50)}\n✕ PASSING (${noCount})\n${'═'.repeat(50)}\n`;
-  Object.entries(noReadings).forEach(([cat, items]) => {
-    body += `\n${cat}\n`;
-    items.forEach(({ reading }) => { body += `  • ${reading}\n`; });
-  });
-  const filled = reflections.filter(r => r.a);
-  if (filled.length > 0) {
-    body += `\n${'═'.repeat(50)}\nREFLECTIONS\n${'═'.repeat(50)}\n`;
-    filled.forEach(({ q, a }) => { body += `\n${q}\n${a}\n`; });
-  }
-
-  // Send via Formspree (free, no backend needed)
-  // They need to sign up at formspree.io and replace FORM_ID below
-  const FORMSPREE_ID = 'YOUR_FORMSPREE_ID'; // ← Replace this after setup
-
-  fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-    body: JSON.stringify({
-      _replyto: ADMIN_EMAIL,
-      _subject: `Readings Worksheet — ${document.getElementById('client-name').value.trim() || 'Anonymous'} — ${new Date().toLocaleDateString()}`,
-      email: ADMIN_EMAIL,
-      message: body
-    })
-  })
-  .then(r => {
-    const el = document.getElementById('email-status');
-    if (r.ok) {
-      el.textContent = '✦ A copy has been sent to your practitioner';
-      el.style.color = 'var(--yes-text)';
-    } else {
-      el.textContent = 'Note: email delivery not configured yet';
-    }
-  })
-  .catch(() => {
-    document.getElementById('email-status').textContent = '';
-  });
+function sendToSephirah() {
+  const clientName = document.getElementById('client-name').value.trim() || 'Anonymous';
+  const subject = encodeURIComponent(`Readings Worksheet — ${clientName}`);
+  window.location.href = `mailto:admin@oraclestarsong.com?subject=${subject}&body=${emailBody}`;
 }
 </script>
 </body>
